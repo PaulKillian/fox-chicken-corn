@@ -18,20 +18,33 @@ a {
 .main-height {
   height: 100vh;
 }
-
-#boat {
-  bottom: 2rem;
+.landscape {
+  background-image: url('../public/images/landscape.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+#boat,
+#corn {
   cursor: pointer;
 }
 @keyframes boat-movement
 {
-    from {
-        left: 0;
-    }
-    to {
-        left: 50%;
-    }
+  from {
+    transform: translate(0,0);
+  }
+
+  to {
+    transform: translate(1920px,0);
+  }
 }
 .boat-animation {
   animation: boat-movement 5s;
+}
+#tooltip {
+  display: none;
+}
+
+#tooltip[data-show] {
+  display: block;
 }
