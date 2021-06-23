@@ -11,8 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 export default function Home() {
   const moveBoat = () => {
     const boatImg = document.getElementById('boat')
-    boatImg.classList.remove('boat-animation')
-    boatImg.classList.add('boat-animation')
+    boatImg.classList.toggle('boat-animation')
 }
 
   return (
