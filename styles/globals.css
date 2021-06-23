@@ -25,12 +25,13 @@ a {
 }
 @keyframes boat-movement
 {
-    from {
-        left: 0;
-    }
-    to {
-        left: 50%;
-    }
+  from {
+    transform: translate(0,0);
+  }
+
+  to {
+    transform: translate(1920px,0);
+  }
 }
 .boat-animation {
   animation: boat-movement 5s;
