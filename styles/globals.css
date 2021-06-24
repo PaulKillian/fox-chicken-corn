@@ -35,11 +35,11 @@ a {
   }
 
   to {
-    transform: translate(1920px,0);
+    transform: translate(50vw,0);
   }
 }
 .boat-animation {
-  animation: boat-movement 5s;
+  animation: boat-movement 10s forwards;
 }
 #tooltip {
   display: none;
@@ -47,4 +47,8 @@ a {
 
 #tooltip[data-show] {
   display: block;
+}
+
+.hidden {
+  visibility: hidden;
 }
