@@ -24,15 +24,6 @@ const moveItem = (item) => {
   currentItem.classList.add('hidden')
 }
 
-const placeItemInBoat = (item) => {
-  items.forEach(currentItem =>{
-    if(item === currentItem.alt) {
-      setBoatItem(currentItem)
-    }
-  })
-  console.log(boatItem)
-}
-
 const moveBoat = () => {
   const boatImg = document.getElementById('boat')
   boatImg.classList.toggle('boat-animation')
@@ -58,13 +49,13 @@ const moveBoat = () => {
   } else {
     return (
       <main className={'d-flex main-height justify-content-start align-items-end landscape'}>
-        <div id={'fox'} aria-describedby="tooltip" onClick={() => setBoat('fox')}>
+        <div id={'fox'} aria-describedby="tooltip">
           <Fox />
         </div>
-        <div id={'chicken'} aria-describedby="tooltip" onClick={() => setBoat('chicken')}>
+        <div id={'chicken'} aria-describedby="tooltip" >
           <Chicken />
         </div>
-        <div id={'corn'} aria-describedby="tooltip" onClick={() => moveItem('corn')}>
+        <div id={'corn'} aria-describedby="tooltip">
         <div id={'tooltip'} role="tooltip" className={'bg-white p-2'}>I don't want to die!</div>
           <Corn />
         </div>
@@ -75,12 +66,14 @@ const moveBoat = () => {
         <div className={'position-absolute'}>
           {items.map(item => {
             if(item.alt === clickedItem) {
-              <Image 
-                src={item.src} 
-                alt={item.alt} 
-                width={item.width}
-                height={item.height}
-            />
+              return (
+                <Image 
+                  src={item.src} 
+                  alt={item.alt} 
+                  width={item.width}
+                  height={item.height}
+              />
+            )
           }
         })}
         </div>

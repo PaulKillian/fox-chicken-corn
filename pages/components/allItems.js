@@ -43,8 +43,8 @@ export const Boat = () => {
     <Image 
         src={boat} 
         alt="Boat" 
-        width={130}
-        height={150}
+        width={300}
+        height={100}
     />
   )
 }
@@ -54,8 +54,8 @@ export const Farmer = () => {
     <Image 
         src={farmer} 
         alt="Farmer" 
-        width={130}
-        height={150}
+        width={200}
+        height={280}
     />
   )
 }
@@ -77,18 +77,6 @@ export const items = [
   {
     src: corn,
     alt: "corn",
-    width: 130,
-    height: 150
-  },
-  {
-    src: boat,
-    alt: "boat",
-    width: 130,
-    height: 150
-  },
-  {
-    src: farmer,
-    alt: "farmer",
     width: 130,
     height: 150
   }
