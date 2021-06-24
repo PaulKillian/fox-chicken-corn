@@ -4,11 +4,6 @@ import corn from '../../public/images/corn.png'
 import Image from 'next/image'
 
 const CornInBoat = () => {
-    const moveBoat = () => {
-        const boatImg = document.getElementById('boat')
-        boatImg.classList.toggle('boat-animation')
-    }
-
     return (
         <div id={'boat'} className={'d-flex flex-column justify-content-end'} onClick={moveBoat}>
         <div className={'position-relative'}>

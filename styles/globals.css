@@ -25,7 +25,9 @@ a {
   background-position: bottom;
 }
 #boat,
-#corn {
+#corn,
+#chicken,
+#fox {
   cursor: pointer;
 }
 @keyframes boat-movement
