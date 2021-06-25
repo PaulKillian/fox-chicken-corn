@@ -43,8 +43,8 @@ export const Boat = () => {
     <Image 
         src={boat} 
         alt="Boat" 
-        width={300}
-        height={100}
+        width={200}
+        height={50}
     />
   )
 }
