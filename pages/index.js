@@ -13,15 +13,19 @@ import { Constraints } from './components/constraints'
 export default function Home() {
   const [clickedItem, setClickedItem] = useState('')
   const [itemInBoat, setItemInBoat] = useState('')
+  const [hideItemOnShore, setHideItemOnShore] = useState('')
   useEffect(() => {
     Popover();
   })
 
   const moveItem = (item) => {
     setClickedItem(item)
+    setItemInBoat(item)
     const currentItem = document.getElementById(item);
     currentItem.classList.add('hidden')
   }
+
+  console.log(clickedItem)
 
   const moveBoat = () => {
     if(clickedItem === 'corn') {
@@ -38,7 +42,8 @@ export default function Home() {
     boatImg.classList.toggle('boat-animation')
   }
 
-  if(clickedItem === '') {
+
+  if (clickedItem === '') {
     return (
       <main className={'landscape main-height'}>
         <Constraints />
@@ -58,9 +63,11 @@ export default function Home() {
         </div>
       </main>
     ) 
-  } else if (clickedItem !== '' && itemInBoat === 'corn') {
+  } else if (clickedItem === 'corn' && itemInBoat === 'corn') {
     return (
-      <main className={'d-flex main-height justify-content-start align-items-end landscape'}>
+      <main className={'landscape main-height'}>
+        <Constraints />
+        <div className={'d-flex justify-content-start align-items-end landscape'}>
           <div id={'fox'} aria-describedby="tooltip">
             <Fox />
           </div>
@@ -69,8 +76,8 @@ export default function Home() {
               alt="Poof" 
               width={200}
               height={200}
-            />
-          <div id={'chicken'} aria-describedby="tooltip" >
+            />The Chicken eat the corn!
+          <div id={'chicken'} className={'hidden'} aria-describedby="tooltip" >
             <Chicken />
           </div>
           <div id={'corn'} aria-describedby="tooltip">
@@ -88,12 +95,15 @@ export default function Home() {
           </div>
         </div>
           {/* <Image src={farShore} alt="The far shore" /> */}
-        </main>
+        </div>
+      </main>
       )
-  } else if (clickedItem !== '' && itemInBoat === 'fox') {
+  } else if (clickedItem === 'fox' && itemInBoat === 'fox') {
     return (
-      <main className={'d-flex main-height justify-content-start align-items-end landscape'}>
-          <div id={'fox'} aria-describedby="tooltip">
+      <main className={'landscape main-height'}>
+        <Constraints />
+        <div className={'d-flex justify-content-start align-items-end landscape'}>
+          <div id={'fox'} className={'hidden'} aria-describedby="tooltip">
             <Fox />
           </div>
           <div id={'chicken'} aria-describedby="tooltip" >
@@ -120,15 +130,18 @@ export default function Home() {
           </div>
         </div>
           {/* <Image src={farShore} alt="The far shore" /> */}
+          </div>
         </main>
       )
   } else {
     return (
-      <main className={'d-flex main-height justify-content-start align-items-end landscape'}>
+      <main className={'landscape main-height'}>
+        <Constraints />
+      <div className={'d-flex justify-content-start align-items-end landscape'}>
         <div id={'fox'} aria-describedby="tooltip">
           <Fox />
         </div>
-        <div id={'chicken'} aria-describedby="tooltip" >
+        <div id={'chicken'} className={'hidden'} aria-describedby="tooltip" >
           <Chicken />
         </div>
         <div id={'corn'} aria-describedby="tooltip">
@@ -140,25 +153,15 @@ export default function Home() {
           <Farmer />
         </div>
         <div className={'position-absolute'}>
-          {items.map(item => {
-            if(item.alt === clickedItem) {
-              return (
-                <Image 
-                  src={item.src} 
-                  alt={item.alt} 
-                  width={item.width}
-                  height={item.height}
-              />
-            )
-          }
-        })}
+            <Chicken />
         </div>
         <div className={'position-absolute'}>
           <Boat />
         </div>
       </div>
         {/* <Image src={farShore} alt="The far shore" /> */}
-      </main>
+      </div>
+    </main>
     )
   }
 }
