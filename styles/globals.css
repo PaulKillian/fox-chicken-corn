@@ -88,3 +88,17 @@ a {
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.shadow {
+  filter: drop-shadow(0 0 0.1rem rgb(46, 46, 46));
+}
+.imageRotateHorizontal {
+  -moz-animation: spinHorizontal 1.5s forwards;
+  -o-animation: spinHorizontal 1.5s forwards;    
+  -webkit-animation: spinHorizontal 1.5s forwards;
+  animation: spinHorizontal 1.5s forwards;
+}
+
+@keyframes spinHorizontal {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}

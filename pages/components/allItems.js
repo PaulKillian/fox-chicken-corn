@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 export const Fox = () => {
   return (
-    <Image 
+    <Image className={'shadow'}
         src={fox} 
         alt="fox" 
         width={130}
@@ -18,7 +18,7 @@ export const Fox = () => {
 
 export const Chicken = () => {
   return (
-    <Image 
+    <Image className={'shadow'}
         src={chicken} 
         alt="Chicken" 
         width={130}
@@ -29,7 +29,7 @@ export const Chicken = () => {
 
 export const Corn = () => {
   return (
-    <Image 
+    <Image className={'shadow'}
         src={corn} 
         alt="Corn" 
         width={130}
@@ -40,7 +40,7 @@ export const Corn = () => {
 
 export const Boat = () => {
   return (
-    <Image 
+    <Image className={'shadow'}
         src={boat} 
         alt="Boat" 
         width={200}
@@ -51,7 +51,7 @@ export const Boat = () => {
 
 export const Farmer = () => {
   return (
-    <Image 
+    <Image className={'shadow'}
         src={farmer} 
         alt="Farmer" 
         width={200}
