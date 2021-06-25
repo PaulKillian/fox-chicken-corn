@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Popover from './components/popover'
 import EmptyBoat from './components/emptyBoat'
 import { Constraints } from './components/constraints'
+import Particles from './components/particles'
 
 export default function Home() {
   const [clickedItem, setClickedItem] = useState('')
@@ -16,6 +17,7 @@ export default function Home() {
   const [hideItemOnShore, setHideItemOnShore] = useState('')
   useEffect(() => {
     Popover();
+    Particles();
   })
 
   const moveItem = (item) => {
@@ -46,6 +48,7 @@ export default function Home() {
   if (clickedItem === '') {
     return (
       <main className={'landscape main-height'}>
+        <canvas className={'position-absolute'} id="cvs"></canvas>
         <Constraints />
         <div className={'d-flex justify-content-start align-items-end'}>
           <div id={'fox'} aria-describedby="tooltip" onClick={() => moveItem('fox')}>

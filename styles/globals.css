@@ -41,7 +41,7 @@ a {
   }
 
   to {
-    transform: translate(50vw,0);
+    transform: translate(35vw,0);
   }
 }
 .boat-animation {
@@ -63,6 +63,15 @@ a {
 }
 .animation {
   animation: pulse 1s linear infinite both;
+}
+.front {
+  z-index: -1;
+}
+.bt-color {
+  background-color: #5D3F59;
+  color: #F5E2DC;
+  border: none;
+  border-radius: 5px;
 }
 @media (prefers-reduced-motion) {
   .animation {
